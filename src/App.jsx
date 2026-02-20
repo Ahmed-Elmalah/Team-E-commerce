@@ -1,14 +1,27 @@
-const App = () => {
-	return (
-		<div className="min-h-screen flex flex-col bg-black text-white/95 items-center justify-center text-2xl font-bold text-center">
-			<img
-				className="size-40"
-				src="https://res.cloudinary.com/dltj8bim0/image/upload/v1761060580/logo_kukwt0.png"
-				alt=""
-			/>
-			<p>Hello Vite + React + TailwindCSS!</p>
-		</div>
-	);
-};
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./Pages/HomePage";
+import MainLayout from "./Layouts/MainLayout";
 
-export default App;
+export default function App() {
+  return (
+    <div className="w-full">
+      <BrowserRouter>
+        <Routes>
+          {/* login & sinup routing */}
+          <Route path="/login" element={<h1>Login Page</h1>} />
+          <Route path="/signup" element={<h1>SignUP Page</h1>} />
+
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="cart" element={<h1>Shopping Cart Page</h1>} />
+            <Route path="favorite" element={<h1>Your Wishlist</h1>} />
+            <Route path="product/:id" element={<h1>Product Details Page</h1>} />
+          </Route>
+
+          {/* 404 Error */}
+          <Route path="*" element={<h1>Error 404 | Page Not Found</h1>} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}
