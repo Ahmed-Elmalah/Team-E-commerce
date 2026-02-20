@@ -12,13 +12,13 @@ export default function HomePage() {
         <Hero />
 
         {/* Categories Section */}
-        <section className="mx-auto mt-12 max-w-[1440px] px-6 lg:px-10">
+        <section className="mx-auto mt-12 max-w-360 px-6 lg:px-10">
           <div className="flex items-center justify-between pb-6">
             <h2 className="text-2xl font-bold text-[#0d121c]">
               Shop by Category
             </h2>
             <a
-              className="group flex items-center justify-center gap-1 text-md font-semibold text-[#0b50da]"
+              className="group flex items-center justify-center gap-1 text-md font-semibold text-primary"
               href="#"
             >
               View all
@@ -46,7 +46,7 @@ export default function HomePage() {
         </section>
 
         {/* Trending Section */}
-        <section className="mx-auto my-16 max-w-[1440px] px-6 lg:px-10">
+        <section className="mx-auto my-16 max-w-360 px-6 lg:px-10">
           <div className="mb-8 flex flex-col gap-2 md:flex-row md:items-end md:justify-between text-left">
             <div>
               <h2 className="text-3xl font-bold text-[#0d121c]">
@@ -71,18 +71,21 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             <ProductCard
+              id={1}
               title="Classic White Tee"
               category="Essential Basics"
               price="$25.00"
               img="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500"
             />
             <ProductCard
+              id={2}
               title="Leather Weekend Bag"
               category="Travel & Gear"
               price="$150.00"
               img="https://images.unsplash.com/photo-1547949003-9792a18a2601?w=500"
             />
             <ProductCard
+              id={3}
               title="Ceramic Vase"
               category="Home Decor"
               price="$35.00"
@@ -91,12 +94,14 @@ export default function HomePage() {
               img="https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=500"
             />
             <ProductCard
+              id={4}
               title="Minimalist Watch"
               category="Accessories"
               price="$120.00"
               img="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
             />
             <ProductCard
+              id={5}
               title="Design Anthology"
               category="Books"
               price="$55.00"
@@ -104,6 +109,7 @@ export default function HomePage() {
               img="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=500"
             />
             <ProductCard
+              id={6}
               title="Retro Sunglasses"
               category="Accessories"
               price="$18.00"
