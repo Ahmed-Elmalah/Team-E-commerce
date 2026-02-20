@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import MainLayout from "./Layouts/MainLayout";
 import FavoritePage from "./Pages/FavoritePage";
+import ProductDetailsPage from "./Pages/ProductDetailsPage";
 
 export default function App() {
   return (
@@ -16,7 +17,7 @@ export default function App() {
             <Route index element={<HomePage />} />
             <Route path="cart" element={<h1>Shopping Cart Page</h1>} />
             <Route path="favorite" element={<FavoritePage/>} />
-            <Route path="product/:id" element={<h1>Product Details Page</h1>} />
+            <Route path="product/:id" element={<ProductDetailsPage />} />
           </Route>
 
           {/* 404 Error */}

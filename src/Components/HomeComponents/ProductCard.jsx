@@ -9,8 +9,9 @@ import {
   FiTwitter,
   FiMail,
 } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
-export default function ProductCard({
+export default function ProductCard({id,
   title,
   category,
   price,
@@ -19,12 +20,15 @@ export default function ProductCard({
   oldPrice,
   soldOut,
 }) {
+
+  const navigate = useNavigate();
+
   return (
-    <div className="group relative flex flex-col gap-3 text-left">
-      <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-gray-100">
+    <div onClick={()=>{navigate(`product/${id}`)}} className="group relative flex flex-col gap-3 text-left">
+      <div className="relative aspect-3/4 w-full overflow-hidden rounded-xl bg-gray-100">
         {badge && (
           <span
-            className={`absolute left-3 top-3 z-10 rounded-md px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-sm ${badge === "Sale" ? "bg-red-500" : badge === "New" ? "bg-[#0b50da]" : "bg-gray-900"}`}
+            className={`absolute left-3 top-3 z-10 rounded-md px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-sm ${badge === "Sale" ? "bg-red-500" : badge === "New" ? "bg-primary" : "bg-gray-900"}`}
           >
             {badge}
           </span>
@@ -40,14 +44,14 @@ export default function ProductCard({
         ></div>
         {!soldOut && (
           <div className="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-            <button className="flex cursor-pointer h-10 w-full items-center justify-center gap-2 rounded-lg bg-white/90 text-sm font-bold text-[#0d121c] shadow-lg backdrop-blur-sm transition-colors hover:bg-[#0b50da] hover:text-white">
+            <button className="flex cursor-pointer h-10 w-full items-center justify-center gap-2 rounded-lg bg-white/90 text-sm font-bold text-[#0d121c] shadow-lg backdrop-blur-sm transition-colors hover:bg-primary hover:text-white">
               <FiShoppingBag size={16} /> Add to Cart
             </button>
           </div>
         )}
       </div>
       <div className="flex flex-col">
-        <h3 className="cursor-pointer text-base font-medium text-[#0d121c] hover:text-[#0b50da]">
+        <h3 className="cursor-pointer text-base font-medium text-[#0d121c] hover:text-primary">
           {title}
         </h3>
         <p className="text-sm text-[#49659c]">{category}</p>

@@ -12,10 +12,10 @@ const data = [
 
 export default function FavoritePage() {
   return (
-    <div className="max-w-[1440px] mx-auto px-4 py-10">
+    <div className="max-w-360 mx-auto px-4 py-10">
       <header className="mb-10">
          <h1 className="text-4xl font-black text-text-main dark:text-white">Your Favorites</h1>
-         <p className="text-text-secondary mt-2">You have <span className="text-[#0b50da] font-bold">{data.length} items</span> saved.</p>
+         <p className="text-text-secondary mt-2">You have <span className="text-primary font-bold">{data.length} items</span> saved.</p>
       </header>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
