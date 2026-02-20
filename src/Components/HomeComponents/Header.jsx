@@ -9,11 +9,12 @@ import {
   FiTwitter,
   FiMail,
 } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
     <header className="z-50 w-full border-b border-gray-100 bg-white/90 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-6 lg:px-10">
+      <Link to={"/"} className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-6 lg:px-10">
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-[#0b50da] text-white shadow-lg shadow-[#0b50da]/20">
             <FiShoppingBag size={22} />
@@ -33,9 +34,9 @@ export default function Header() {
           </div>
         </div>
         <div className="flex items-center gap-4">
-          <button className="flex size-10 cursor-pointer items-center justify-center rounded-full hover:bg-[#f8f9fc] text-[#0d121c] hover:text-[#0b50da] transition-colors">
-            <FiHeart size={20} />
-          </button>
+          <Link to={"/favorite"} className="flex size-10 cursor-pointer items-center justify-center rounded-full hover:bg-[#f8f9fc] text-[#0d121c] hover:text-[#0b50da] transition-colors">
+            <FiHeart size={20}  />
+          </Link>
           <button className="relative flex size-10 items-center justify-center rounded-full hover:bg-[#f8f9fc] text-[#0d121c] hover:text-[#0b50da] transition-colors">
             <FiShoppingCart size={20} className="cursor-pointer" />
             <span className="absolute -right-1 -top-1 flex size-5 items-center justify-center rounded-full bg-[#0b50da] text-[10px] font-bold text-white ring-2 ring-white">
@@ -49,7 +50,7 @@ export default function Header() {
             />
           </div>
         </div>
-      </div>
+      </Link>
     </header>
   );
 }
