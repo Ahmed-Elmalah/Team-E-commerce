@@ -49,7 +49,6 @@ const CartPage = () => {
 
     return (
         <div className="bg-background-light text-slate-900 font-display antialiased min-h-screen flex flex-col">
-            <Header />
 
             <main className="flex-grow container mx-auto px-4 md:px-10 py-12 max-w-7xl">
                 <div className="mb-10">
