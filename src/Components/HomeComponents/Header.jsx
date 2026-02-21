@@ -3,11 +3,6 @@ import {
   FiSearch,
   FiHeart,
   FiShoppingCart,
-  FiArrowRight,
-  FiFacebook,
-  FiInstagram,
-  FiTwitter,
-  FiMail,
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
@@ -37,12 +32,14 @@ export default function Header() {
           <Link to={"/favorite"} className="flex size-10 cursor-pointer items-center justify-center rounded-full hover:bg-[#f8f9fc] text-[#0d121c] hover:text-[#0b50da] transition-colors">
             <FiHeart size={20}  />
           </Link>
+          <Link to={"/cart"} className="flex size-10 cursor-pointer items-center justify-center rounded-full hover:bg-[#f8f9fc] text-[#0d121c] hover:text-[#0b50da] transition-colors">
           <button className="relative flex size-10 items-center justify-center rounded-full hover:bg-[#f8f9fc] text-[#0d121c] hover:text-[#0b50da] transition-colors">
             <FiShoppingCart size={20} className="cursor-pointer" />
             <span className="absolute -right-1 -top-1 flex size-5 items-center justify-center rounded-full bg-[#0b50da] text-[10px] font-bold text-white ring-2 ring-white">
               3
             </span>
           </button>
+          </Link>
           <div className="ml-2 flex justify-center items-center size-10 overflow-hidden rounded-full ring-2 ring-gray-100 cursor-pointer">
             <img
               src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100"
