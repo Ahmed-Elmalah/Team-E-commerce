@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Header from '../Components/CartComponents/Header';
 import CartItem from '../Components/CartComponents/CartItem';
 import CartSummary from '../Components/CartComponents/CartSummary';
 import { FiArrowLeft } from 'react-icons/fi';
