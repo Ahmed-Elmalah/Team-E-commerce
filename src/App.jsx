@@ -4,6 +4,8 @@ import MainLayout from "./Layouts/MainLayout";
 import FavoritePage from "./Pages/FavoritePage";
 import ProductDetailsPage from "./Pages/ProductDetailsPage";
 import CartPage from "./Pages/CartPage";
+import LoginPage from "./Pages/LoginPage";
+import SignUpPage from "./Pages/SignUpPage"
 
 export default function App() {
   return (
@@ -11,8 +13,8 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           {/* login & sinup routing */}
-          <Route path="/login" element={<h1>Login Page</h1>} />
-          <Route path="/signup" element={<h1>SignUP Page</h1>} />
+          <Route path="/login" element={<LoginPage/>} />
+          <Route path="/signup" element={<SignUpPage/>} />
 
           <Route path="/" element={<MainLayout />}>
             <Route index element={<HomePage />} />
