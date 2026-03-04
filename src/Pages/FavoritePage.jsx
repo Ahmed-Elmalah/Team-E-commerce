@@ -1,6 +1,7 @@
+import { useState } from "react";
 import ProductCard from "../Components/FavoriteComponents/ProductCard";
 
-const data = [
+const initialData = [
   { id: 2, title: "Analog Classic Watch", price: "120.00", category: "Silver Band • 42mm", img: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=500" },
   { id: 3, title: "H4 Wireless Headphones", price: "299.00", category: "Matte Black • Noise", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=500" },
   { id: 4, title: "Pro Run Speedster", price: "159.00", category: "Red/White • US 10", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=500" },
@@ -11,6 +12,12 @@ const data = [
 ];
 
 export default function FavoritePage() {
+  const [data, setData] = useState(initialData);
+
+  const handleRemove = (id) => {
+    setData(data.filter((item) => item.id !== id));
+  };
+
   return (
     <div className="max-w-360 mx-auto px-4 py-10">
       <header className="mb-10">
@@ -20,7 +27,7 @@ export default function FavoritePage() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {data.map((item) => (
-          <ProductCard key={item.id} {...item} />
+          <ProductCard key={item.id} {...item} onRemove={() => handleRemove(item.id)} />
         ))}
       </div>
     </div>

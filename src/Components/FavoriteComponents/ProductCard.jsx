@@ -1,7 +1,7 @@
 import { FiShoppingBag, FiTrash2 } from "react-icons/fi";
 import { AiFillHeart } from "react-icons/ai";
 
-export default function ProductCard({ title, category, price, img }) {
+export default function ProductCard({ title, category, price, img ,onRemove}) {
     return (
         <div className="group flex flex-col h-full bg-white rounded-xl transition-all duration-300">
             <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-[#f3f4f6]">
@@ -32,7 +32,7 @@ export default function ProductCard({ title, category, price, img }) {
                         Add to Cart
                     </button>
 
-                    <button className="flex w-full cursor-pointer items-center justify-center text-[11px] font-medium text-[#94a3b8] hover:text-[#ef4444] transition-colors gap-1 py-1 uppercase tracking-tight border-none bg-transparent">
+                    <button onClick={onRemove} className="flex w-full cursor-pointer items-center justify-center text-[11px] font-medium text-[#94a3b8] hover:text-[#ef4444] transition-colors gap-1 py-1 uppercase tracking-tight border-none bg-transparent">
                         <FiTrash2 size={12} />
                         Remove from favorites
                     </button>
